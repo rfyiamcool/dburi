@@ -4,21 +4,21 @@ import os
 import urllib
 import urlparse
 
+default_port = {
+    'mongo': 27017,
+    'mysql': 3306,
+    'postgres': 5432,
+    'redis': 6379,
+    'hbase': 9090,
+    'elasticsearch':9200
+}
+
 def parse_extra(str):
     qs = dict( (k, v if len(v)>1 else v[0] )
     for k, v in urlparse.parse_qs(str).iteritems() )
     return qs
 
 def parse_db_str(conn_str):
-    default_port = {
-        'mongo': 27017,
-        'mysql': 3306,
-        'postgres': 5432,
-        'redis': 6379,
-        'hbase': 9090,
-        'elasticsearch':9200
-    }
-
     pattern = re.compile(r'''
             (?P<name>[\w\+]+)://
             (?:
