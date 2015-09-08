@@ -1,9 +1,25 @@
 # dburi
 
+use python parse database uri address, return format
+
+什么是uri ?  简单说uri是配置地址的一种表达方式，可以在一行里详细的描述出host,port,user,passwd,database,tablename,other field 。 
+
+我发现python社区里，没发现能用的database uri的解析模块 
+
+
+[更多文档](http://xiaorui.cc  "更多db uri")
+
 ### 安装
 
 ```
 pip install dburi
+```
+
+
+```
+git clone git@github.com:rfyiamcool/dburi.git
+cd dburi
+python setup.py install
 ```
 
 ### 方法
