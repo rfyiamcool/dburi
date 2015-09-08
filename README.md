@@ -26,13 +26,15 @@ python setup.py install
 
 mysql://xiaorui:123@localhost/xiaorui_master?option=open&charset=utf8&table=test'
 
+```
 mysql标示位表明是哪个数据库
         xiaorui:123 表明的是账号和密码
                 @localhost 表明的是数据库HOST地址
                           /xiaorui_master 表明的是数据库名字
                                             ?k=v&k=v 这堆传参是作为扩展字段使用的
+```
 
-
+开始测试,端口可以不填写，但是数据库要写全称
 ```
 from dburi import parse_db_str
 print parse_db_str('mysql://xiaorui:123@localhost/xiaorui_master?option=open&charset=utf8&table=test')
