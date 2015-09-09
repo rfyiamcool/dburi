@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
         name = "dburi",
-        version = "2.1",
+        version = "3.1",
         author = "ruifengyun",
         author_email = "rfyiamcool@163.com",
         description = "use python parse database uri ,return format ",
