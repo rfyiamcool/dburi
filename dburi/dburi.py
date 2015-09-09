@@ -3,15 +3,8 @@ import re
 import os
 import urllib
 import urlparse
-
-default_port = {
-    'mongo': 27017,
-    'mysql': 3306,
-    'postgres': 5432,
-    'redis': 6379,
-    'hbase': 9090,
-    'elasticsearch':9200
-}
+from config import Config
+from conts import default_port
 
 def parse_extra(str):
     qs = dict( (k, v if len(v)>1 else v[0] )
@@ -36,7 +29,6 @@ def parse_db_str(conn_str):
     m = pattern.match(conn_str)
     if m is not None:
         components = m.groupdict()
-        print components
         if components['extra']:
             for extra_k,extra_v  in parse_extra(components['extra']).iteritems():
                 components[extra_k] = extra_v

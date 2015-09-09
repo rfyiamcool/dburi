@@ -15,6 +15,7 @@ setup(
         url = "https://github.com/rfyiamcool",
         packages = find_packages(),
         long_description = read('README.md'),
+        install_requires=['ConfigParser'],
         classifiers = [
              'Development Status :: 2 - Pre-Alpha',
              'Intended Audience :: Developers',
