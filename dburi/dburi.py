@@ -20,24 +20,26 @@ def parse_extra(str):
 
 def parse_db_str(conn_str):
     pattern = re.compile(r'''
-            (?P<name>[\w\+]+)://
-            (?:
-                (?P<user>[^:/]*)
-                (?::(?P<passwd>[^/]*))?
-            @)?
-            (?:
-                (?P<host>[^/:]*)
-                (?::(?P<port>[^/]*))?
-            )?
-            /?(?P<db>\w*)?\?*
-            (?P<extra>(.*))?
-            '''
-            , re.X)
+        (?P<name>[\w\+]+)://
+        (?:
+            (?P<user>[^:/]*)
+            (?::(?P<passwd>[^/]*))?
+        @)?
+        (?:
+            (?P<host>[^/:]*)
+            (?::(?P<port>[^/]*))?
+        )?
+        (?:/(?P<db>\w*))?
+        (?:\?(?P<extra>(.*)))?
+        '''
+        , re.X)
     m = pattern.match(conn_str)
     if m is not None:
         components = m.groupdict()
-        for extra_k,extra_v  in parse_extra(components['extra']).iteritems():
-            components[extra_k] = extra_v
+        print components
+        if components['extra']:
+            for extra_k,extra_v  in parse_extra(components['extra']).iteritems():
+                components[extra_k] = extra_v
 
         if components['db'] is not None:
             tokens = components['db'].split('?', 2)
