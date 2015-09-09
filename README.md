@@ -2,9 +2,18 @@
 
 use python parse database uri address, return format
 
-什么是uri ?  简单说uri是配置地址的一种表达方式，可以在一行里详细的描述出host,port,user,passwd,database,tablename,other field 。 
+什么是uri ?  简单说uri是配置地址的一种表达方式，可以在一行里详细的描述出host,port,user,passwd,database,tablename,other field 
 
-我发现python社区里，没发现能用的database uri的解析模块，就自己搞了一个。下面有测试的结果 。
+原本是想在python社区里淘淘，结果没发现能用的database uri解析模块，就自己搞了一个。
+
+
+new version :
+
+解决了dburi兼容python 2.6 3.x的问题
+
+增加了常见数据库的端口补充
+
+增加了ini配置文件的解析
 
 
 [更多文档](http://xiaorui.cc  "更多db uri")
