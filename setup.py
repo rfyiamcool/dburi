@@ -6,12 +6,12 @@ def read(fname):
 
 setup(
         name = "dburi",
-        version = "3.1",
+        version = "3.2",
         author = "ruifengyun",
         author_email = "rfyiamcool@163.com",
         description = "use python parse database uri ,return format ",
         license = "MIT",
-        keywords = ["database uri","ruifengyun"],
+        keywords = ["database uri","fengyun"],
         url = "https://github.com/rfyiamcool",
         packages = find_packages(),
         long_description = read('README.md'),
