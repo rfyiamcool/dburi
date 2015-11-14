@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
         name = "dburi",
-        version = "3.2",
+        version = "3.3",
         author = "ruifengyun",
         author_email = "rfyiamcool@163.com",
         description = "use python parse database uri ,return format ",
@@ -17,7 +17,7 @@ setup(
         long_description = read('README.md'),
         install_requires=['ConfigParser'],
         classifiers = [
-             'Development Status :: 2 - Pre-Alpha',
+             'Development Status :: 4 - Beta',
              'Intended Audience :: Developers',
              'License :: OSI Approved :: MIT License',
              'Programming Language :: Python :: 2.7',
